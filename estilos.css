@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    border: 3px solid gray;
+    margin: 0 auto;
+
+    width: 900px;
+    height: auto
+}
+
+.conteiner {
+    margin: 30px auto;
+}
+
+.fecha{
+    text-align: right;
+    margin-right: 60px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+/*TITULO*/
+.conteiner .titulo{
+    margin: 10px auto;
+    width: 785px;
+    height: 54px;
+    border: 1px solid black;
+    background: rgba(173, 216, 230, 0.5);
+}
+
+.titulo h1{
+    margin: 8px auto;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/*INICIO*/
+
+.conteiner.inicio{
+    align-items: center;
+    margin: 0 ;
+    padding: 8px;
+}
+
+/*TABLA DE DATOS PERSONALES*/
+.conteiner .inicio table {
+    margin: 20px auto 0 auto;
+    width: 650px;
+    height: auto; 
+    caption-side: bottom;  
+    border-collapse: collapse;
+}
+.conteiner .inicio table th{
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.conteiner .inicio table tr{
+    border: 1px solid black;
+}
+
+.conteiner .inicio table input{
+    margin: 0 5px;
+    border: 0;
+    
+}
+
+.conteiner .inicio table .inpname{
+    margin: 0 5px;
+    width:456px;
+    font-size: 15px;
+    
+}
+.conteiner .inicio table .inptel{
+    margin: 0 5px;
+    width: 165px;
+    font-size: 15px;
+}
+
+
+.conteiner .inicio .inpnec{
+    width: 50px;
+    text-align: left;
+}
+
+
+.conteiner .inicio table textarea{
+    padding: 5px 5px; 
+    margin: 5px 0px;
+    resize:none;
+}
+
+/*TABLA DE SELECCION DE OBRA*/
+
+.conteiner .seleccion table{
+    margin: 20px auto;
+    width: 650px;
+    height: 192px; 
+    caption-side: bottom;  
+    border-collapse: collapse;
+    border:1px solid black;
+}
+.conteiner .seleccion table th{
+    background-color: rgba(128, 128, 128, 0.5);
+    height: 29px;
+}
+.conteiner .seleccion table td{
+    text-indent: 70px; 
+}
+
+.conteiner .seleccion table .selotro{
+    text-indent: 260px;
+}
+
+/*TABLA DINAMICA DE SELECION DE TAREAS*/
+
+.conteiner .sectdocument table {
+    margin: 10px auto;
+    width: 650px;
+    height: auto;
+    caption-side: bottom;  
+    border-collapse: collapse;
+}
+.conteiner .sectdocument table .titu {
+    background-color: rgba(173, 216, 230, 0.5);
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    width: 650px;
+    height: 50px;
+}
+.conteiner .sectdocument table .tituloseleccion{
+    background-color: rgba(128, 128, 128, 0.5);
+    
+}
+.conteiner .sectdocument table .titulotareas{
+    background-color: rgba(128, 128, 128, 0.2);
+    height: auto;
+    
+}
+.conteiner .sectdocument .tdarea{
+    padding: 5px 5px; 
+   
+}
+.conteiner .sectdocument .tdotro{
+    text-align: left;
+}
+.conteiner .sectdocument td,th{
+    border: 1px solid black;
+    padding: 3px 3px; 
+    width:inherit;
+    
+}
+
+.conteiner .sectdocument .aplic{
+    width: 52px;
+    padding: 3px; 
+}
+
+
+.conteiner .sectdocument textarea{
+    resize: none;
+    font-size: 20px ;
+}
+.conteiner .sectdocument table input{
+    margin-left: 15px;
+    margin-top: auto;
+   
+}
+
+textarea{
+    resize: none;
+}
+
+/*OTROS*/
+ button{
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+}
+.botonprueba{
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+}
+.list {
+    display: block;
+}
+
+.formulario__mensaje {
+    margin: 0 auto;
+    width: 500px;
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}

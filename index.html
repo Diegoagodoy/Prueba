@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>CHECKLIST OBRAS CIVILES</title>
+    
+</head>
+<body>
+    <!--DATOS PERSONALES-->
+    <div class="conteiner">
+        <div class="fecha" ><p id="fecha">Fecha</p></div>
+        <div class="titulo">
+            <h1>SOLICITUD PARA OBRA CIVIL</h1>
+        </div>
+    
+        <section class="inicio">
+            <table>
+                <tr>
+                    <th >Nombre de la Obra</th>
+                    <td colspan="5"><input class="inpname" type="text" id="name" name="nombreObra" maxlength="53" required></td>
+                </tr>
+                <tr>
+                    <th>Direccion del Sitio</th>
+                    <td colspan="5"><input class="inpname" type="url" id="name" name="direccion" maxlength="53"></td>
+                </tr>
+                <tr>
+                    <th>Nombre del Solicitante</th>
+                    <td colspan="1"><input type="text" id="name" name="name" maxlength="22"></td>
+                    <th >Telefono</th>
+                    <td colspan="3"><input class="inptel" type="tel" id="name" name="nombreSolicitante" maxlength="19"></td>
+                </tr>
+                <tr>
+                    <th>Nombre Referente Local</th>
+                    <td colspan="1"><input type="text" id="name" name="name" maxlength="22"></td>
+                    <th >Telefono</th>
+                    <td colspan="3"><input class="inptel" type="tel" id="name" name="nombreReferente" maxlength="19"></td>
+                </tr>
+                <tr>
+                    <th>PEP de Imputacion</th>
+                    <td colspan="5"><input class="inpname" type="text" id="name" name="PEPImputacion" maxlength="53"></td>
+                </tr>
+                <tr>
+                    <th >Fecha de Necesidad</th>
+                    <td ><input type="month" id="name" name="fechaNecesidad"></td>
+                    <th colspan="2" >Interferencias</th>
+                    <td class="inpnec" ><input type="radio" id="radiointerferencia" name="interferencias" onclick="verificarRI()">SI</td>
+                    <td class="inpnec" ><input type="radio" name="interferencias" onclick="verificarRI()">NO</td>
+                </tr> 
+                <tr style="display:none"  id="texinterferencia">
+                    <td colspan="6"><textarea name="" cols="85" rows="4" maxlength="348" placeholder="Nombre y Telefono del responsable: &#10Tipos de Interferencias:&#10Fecha estimada de liberacion "></textarea></td>
+                </tr> 
+            </table>
+        </section>
+        <!--SELECCION DE OBRAS-->
+        <section class="seleccion">
+            <table>
+                <tr>
+                    <th colspan="2">Seleccione el Tipo de Obra a Solicitar</th>
+                </tr>
+                
+                <tr>
+                    <td><input type="radio" id="obra1" name="Gruporadio" onclick="verificarRB()"><label for="obra1">  Platea para Grupo Electrogeno</label></td>
+                    <td><input type="radio" id="obra6" name="Gruporadio" onclick="verificarRB()"><label for="obra6">  Pilar de Energia</label></td>
+                </tr>
+                <tr>  
+                    <td><input type="radio" id="obra2" name="Gruporadio" onclick="verificarRB()"><label for="obra2">  Sala de Energia</label></td>
+                    <td><input type="radio" id="obra7" name="Gruporadio" onclick="verificarRB()"><label for="obra7">  Canalizaciones y Montantes</label></td> 
+                </tr>
+                <tr>
+                    <td><input type="radio" id="obra3" name="Gruporadio" onclick="verificarRB()"><label for="obra3">  Sala de Racks</label></td>
+                    <td><input type="radio" id="obra8" name="Gruporadio" onclick="verificarRB()"><label for="obra8">  Sala Blanca</label></td>   
+                </tr>
+                <tr>
+                    <td><input type="radio" id="obra4" name="Gruporadio" onclick="verificarRB()"><label for="obra4">  Sala de Grupo Electrogeno</label></td>
+                    <td><input type="radio" id="obra9" name="Gruporadio" onclick="verificarRB()"><label for="obra9">  Sala de Media Tension</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="obra5" name="Gruporadio" onclick="verificarRB()"><label for="obra5">  Platea para Shelter</label></td>     
+                    <td><input type="radio" id="obra10" name="Gruporadio" onclick="verificarRB()"><label for="obra10">  Insonorizacion</label></td>
+                </tr>
+                
+                <tr >
+                    <td class="selotro" colspan="2"><input type="radio" id="obra11" name="Gruporadio" onclick="verificarRB()"><label for="obra11">  Obra no Tipica</label></td>      
+                </tr>
+            </table>
+        </section>
+        <!--TAREAS A EJECUTAR-->
+        <section class="sectdocument">
+            <!--PLATEA DE GRUPO ELECTROGENO OBRRA1-->
+            
+            <table id="listaObra1" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>PLATEA  GRUPO ELECTROGENO</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td>Platea de Hormigon Armado</td>
+                    <td>Ubicacion - Dimensiones - Nivel Terminado</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td>Canalizaciones / Tendido de ductos</td>
+                    <td>Trazado - Diametro y cantidad de caños</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td>Camaras / Arquetas</td>
+                    <td>Dimensiones y Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td>Pases de Muro / Losa</td>
+                    <td>Dimensiones y Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td>Servicio de Agua</td>
+                    <td>Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Servicio de Iluminacion y Tomas</td>
+                    <td>Ubicacion, Cantidad y Potencia</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td>Baranda / Guardarail</td>
+                    <td>Trazado</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Jaula de Seguridad</td>
+                    <td>Altura y Dimensiones de Ingreso</td>
+                </tr>
+                <tr>
+                    <td><input type="radio"  name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro1" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra1" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+
+        
+            <!--SALA DE ENERGIA OBRA2-->
+        
+            <table id="listaObra2" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>SALA DE ENERGIA</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td><label>Sala de Energia</label></td>
+                    <td>Dimensiones</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td>Arquetas / Trincheras</td>
+                    <td>Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td>Pases de Muro/Losa</td>
+                    <td>Dimensiones y Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td>Puerta de Ingreso Cortafuego</td>
+                    <td><label>Ubicacion y Dimensiones</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td>Drenaje para Aire Acondicionado</td>
+                    <td>Ubicación y Altura de Aire Acondicionado</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Servicio de Iluminacion, Tomacorriente y Tablero</td>
+                    <td>Ubicacion, Cantidad y Potencia</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro2" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra2" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+            <!--SALA DE RACKS OBRA3-->
+    
+            <table id="listaObra3" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>SALA DE RACKS</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td>Pisada de Piso tecnico</td>
+                    <td>Altura</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td>Desagues para inrows</td>
+                    <td>Ubicacion y Cantidad de piletas de patio</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td>Pases de Muro / Losa</td>
+                    <td>Dimensiones y Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td>Impermiabilizacion de piso</td>
+                    <td>Area a impermiabilizar</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td>Brocales y Drenajes de Emergencia</td>
+                    <td>Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Cegado de Aberturas</td>
+                    <td>(---)</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td>Parrilla de Iluminacion Superior</td>
+                    <td>Area y Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Casamatas para Aires Acondicionados</td>
+                    <td>Ubicacion y Dimensiones de pase</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td>Puerta de Ingreso Cortafuego</td>
+                    <td>Ubicacion y Dimensiones</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro3" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra3" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+        
+            <!--SALA DE GRUPO ELECTROGENO OBRA4-->
+
+            <table id="listaObra4" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>SALA DE GRUPO ELECTROGENO</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td>Sala de Grupo Electrogeno</td>
+                    <td>Dimensiones de Sala</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td>Platea de Hormigon</td>
+                    <td>ubicacion, dimensiones y nivel superio</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td>Ingreso y Egreso de Aire</td>
+                    <td>Ubicacion y Dimension</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td>Servicio de Iluminacion, Tomacorriente y Tablero</td>
+                    <td>Ubicacion, Cantidad y Potencia</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td>Pases de Muro/Losa</td>
+                    <td>Dimensiones y Ubicación</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Extractor</td>
+                    <td>Tipo, Modelo y Potencia</td>
+                </tr> 
+                <tr>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td>Rejilla de desborde y Tanque de combustible</td>
+                    <td>Ubicacion y Capacidad</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Cegado de Aberturas</td>
+                    <td>(---)</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td>Puerta de Ingreso Cortafuego</td>
+                    <td>Ubicacion y Dimensiones</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro4" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra4" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+           
+            <!--PLATEA PARA SHELTER OBRA5-->
+        
+            <table id="listaObra5" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>PLATEA PARA SHELTER</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td><input type="radio" id="name" name="group"></td>
+                    <td>Platea de Hormigon Armado</td>
+                    <td>ubicacion, dimensiones y nivel superio</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td><input type="radio" id="name" name="group1"></td>
+                    <td>Canalizaciones / Tendido de ductos</td>
+                    <td>Trazado, diametro y cantidad de caños</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td><input type="radio" id="name" name="group3"></td>
+                    <td>Camaras / Arquetas</td>
+                    <td>Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td><input type="radio" id="name" name="group2"></td>
+                    <td>Puesta a Tierra</td>
+                    <td>Cantidad de Pletinas y trazado</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td>Servicio de Agua</td>
+                    <td>Ubicación</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Servicio de Iluminacion y Tomacorriente</td>
+                    <td>Ubicacion, Cantidad y Potencia</td>
+                </tr> 
+                <tr>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td>Desagues pluvial y/o Cloacal</td>
+                    <td>A determinar por O.Civiles</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Baranda / Guardarail </td>
+                    <td>Trazado</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro5" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra5" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+          
+            <!--PILAR DE ENERGIA OBRA6-->
+        
+            <table id="listaObra6" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>PILAR DE ENERGIA</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Proyecto Aprobado por Cooperativa Electrica</td>
+                    <td>adjuntar detalle/Proyecto y marcar ubicacion del mismo</td>
+                </tr> 
+                <tr>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td>Camaras / Arquetas</td>
+                    <td>Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Canalizaciones / Tendido de ductos</td>
+                    <td>Trazado, diametro y cantidad de caños</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro6" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra6" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+            <!--CANALIZACIONES Y MONTANTES OBRA7-->
+        
+            <table id="listaObra7" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>CANALIZACIONES Y MONTANTES</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td>Pases de Muro/Losa</td>
+                    <td>Dimensiones y Ubicación</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td>Canalizaciones / Tendido de ductos</td>
+                    <td>razado, diametro y cantidad de caños</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Canalizaciones / Tendido de ductos</td>
+                    <td>Trazado, diametro y cantidad de caños</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Casamatas para Aires Acondicionados</td>
+                    <td>Ubicacion y Dimensiones de pase</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro7" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra7" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+            
+            <!--SALA BLANCA OBRA8-->
+            
+            <table id="listaObra8" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>SALA BLANCA</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td><input type="radio" id="name" name="group6"></td>
+                    <td>Sala de Blaca</td>
+                    <td>Dimensiones</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Arquetas / Trincheras</td>
+                    <td>Ubicacion</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td><input type="radio" id="name" name="group4"></td>
+                    <td>Pases de Muro/Losa</td>
+                    <td>Dimensiones y Ubicación</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td><input type="radio" id="name" name="group7"></td>
+                    <td>Puerta de Ingreso Cortafuego</td>
+                    <td>Ubicacion y dimensiones</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro8" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra8" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+        
+            <!--SALA DE MEDIA TENSION OBRA9-->
+        
+            <table id="listaObra9" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>SALA DE MEDIA TENSION</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Proyecto Aprobado por Cooperativa Electrica</td>
+                    <td>adjuntar detalle/Proyecto y marcar ubicacion del mismo</td>
+                </tr> 
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Pilar de Energia</td>
+                    <td>adjuntar detalle/Proyecto y marcar ubicacion del mismo</td>
+                </tr> 
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro9" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra9" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+                       
+            <!--INSONORIZACION OBRA10-->
+            
+            <table id="listaObra10" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>INSONORIZACION</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Seleccione Tareas a Ejecutar</th>
+                </tr>
+                
+                <tr class="titulotareas">
+                    <th class="aplic">No Aplica</th>
+                    <th class="aplic">Aplica</th>
+                    <th>Tarea a Ejecutar</th>
+                    <th>Documentacion a Presentar</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Ductos de Ingreso y Egreso de Aire</td>
+                    <td>Diseño y Dimensiones</td>
+                </tr> 
+                <tr>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td><input type="radio" id="name" name="group5"></td>
+                    <td>Servicio de Iluminacion, Tomacorriente y Tablero</td>
+                    <td>Ubicacion, Cantidad y Potencia</td>
+                </tr> 
+                <tr>
+                    <td><input type="radio" id="name" name="group8" onclick="texAreaObra()"></td>
+                    <td><input type="radio" id="otro10" name="group8" onclick="texAreaObra()"></td>
+                    <td  colspan="2" class="tdotro">Otro Requerimiento y/u Observaciones a tener en cuenta</td>
+                    
+                </tr>
+                <tr id="texareaobra10" style="display:none;">
+                    <td class="tdarea"  colspan="4"><textarea name=""  cols="56" rows="5" maxlength="285" placeholder="Ingrese Otro Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+            
+            <!--OBRA NO TIPICA OBRA11-->
+        
+            <table id="listaObra11" style="display: none;">
+                <tr class="titu">
+                    <th colspan="4" ><h4>OBRA NO TIPICA</h4></th>
+                </tr>
+                <tr class="tituloseleccion">
+                    <th colspan="4">Describa Obra a Solicitar </th>
+                </tr>
+                <tr>
+                    <td class="tdarea" colspan="4"><textarea name=""  cols="56" rows="18" maxlength="1044" placeholder="Ingrese Requerimiento y/u Observaciones"></textarea></td>
+                </tr>
+            </table>
+            
+        
+      
+        </section>
+        <!--<button id="PDF">Crea Solicitud</button> -->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+			<p><i class="fa fa-exclamation-triangle"></i><b>  Error:</b> Por favor rellena el formulario correctamente. </p>
+		</div>
+    
+        
+    </div>  
+    <button class="botonprueba" id="PDF">Crea Solicitud</button> 
+        <!--<button class="botonreq" id="botonreq" name="botonreq">Crea Solicitud</button> -->
+    
+
+ <script src="app.js"></script>
+ <script src="html2pdf.bundle.min.js"></script>
+</body>
+</html>
