@@ -51,7 +51,7 @@ function texAreaObra(){
 document.addEventListener("DOMContentLoaded",()=>{
     const $boton = document.getElementById("PDF");
     $boton.addEventListener("click",()=>{
-        const $elementoParaConvertir = document.conteiner;
+        const $elementoParaConvertir = document.getElementById("conteiner");
         html2pdf()
         .set({
             margin:1,
