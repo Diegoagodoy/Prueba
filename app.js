@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             campos.seleccion == true &&
             campos.tareas == true){
     
-            console.log("se esta imprimendo")
+            
             const $elementoParaConvertir = document.getElementById("conteiner");
             html2pdf()
             .set({
@@ -344,17 +344,17 @@ document.addEventListener("DOMContentLoaded",()=>{
                 alert("Solicitud Creada, desde ya gracias!\n    EOC - Equipo de Obras Civiles")
                 }, 1000);*/
 
-                overlay.classList.add('active');
+                over.classList.add('active');
                 document.getElementById("impresionOk").classList.add('active');
+                console.log("se esta imprimendo")
 
             })
             
         }else{
            
-            overlay.classList.add('active');
+            over.classList.add('active');
             document.getElementById("impresionError").classList.add('active');
-        
-            console.log("error verifique los campos")
+            console.log("ERROR de IMPRESION")
         };
     
         
@@ -387,8 +387,10 @@ for(i=0 ; i<x.length ; i++){
 
 const links = document.querySelectorAll('#conteiner a');
 const overlay = document.getElementById('overlay');
+const over = document.getElementById('over');
 btnCerrarPopup = document.querySelectorAll('#overlay a');
-
+/*btnCerrarImpresion = document.querySelector('#btnImp');
+btnCerrarErr = document.querySelector('#btnErr');*/
 
 
 const cerrarPopup = ((e)=>{
@@ -397,6 +399,24 @@ const cerrarPopup = ((e)=>{
     popup.classList.remove('active');
 });
 
+const cerrarImp = ((e)=>{
+    e.preventDefault();
+    document.getElementById("impresionOk").classList.remove('active');
+    document.getElementById("impresionError").classList.remove('active');
+    over.classList.remove('active');
+});
+
+
+document.querySelector('#btnImp').addEventListener('click', cerrarImp);
+document.querySelector('#btnErr').addEventListener('click', cerrarImp);
+window.addEventListener('click', e => e.target == over && cerrarImp(e));    
+
+
+//window.addEventListener('click', e => e.target == over && ccerrarImp(e));
+
+/*btnCerrarErr.forEach((err) => {
+	err.addEventListener('click', cerrarImp);
+});*/
 
 btnCerrarPopup.forEach((cerrar) => {
 	cerrar.addEventListener('click', cerrarPopup);
