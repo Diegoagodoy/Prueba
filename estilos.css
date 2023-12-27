@@ -423,7 +423,7 @@ a:hover{
 
 /*POPUP*IMPRESION*/
 
-/*.over {
+.over {
 	background: rgba(0,0,0,.3);
 	position: fixed;
 	top: 0;
@@ -436,15 +436,16 @@ a:hover{
 	visibility: hidden;
 }
 
-.over .active {
+.over.active {
 	visibility: visible;
-}*/
+  
+}
 
 .pop {
     position: absolute;
 	background: #F8F8F8;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-    margin: 15% 0;
+    margin: 10% 0;
 	border-radius: 3px;
 	font-family: 'Montserrat', sans-serif;
 	padding: 20px;
@@ -529,9 +530,10 @@ a:hover{
 /* ANIMACIONES */
 /* ------------------------- */
 .pop.active {	transform: scale(1); opacity: 1; }
-.pop.active h3 { animation: entrada .8s ease .5s forwards; }
-.pop.active h4 { animation: Subtitulo .8s ease .5s forwards; }
-.pop.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+.pop.active h3 { animation: entrada .7s ease .5s forwards; }
+.pop.active h4 { animation: Subtitulo .7s ease .5s forwards; }
+
+
 
 @keyframes entrada {
 	from {
@@ -557,8 +559,4 @@ a:hover{
 	}
 }
 
-@keyframes entradaInputs {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
 
