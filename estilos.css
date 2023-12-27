@@ -24,7 +24,7 @@ body{
 /*TITULO*/
 .conteiner .titulo{
     margin: 10px auto;
-    width: 785px;
+    width: 700px;
     height: 54px;
     border: 1px solid black;
     background: rgba(173, 216, 230, 0.5);
@@ -55,63 +55,137 @@ body{
 }
 .conteiner .inicio table th{
     background-color: rgba(128, 128, 128, 0.5);
+    width: 25px;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover{
+    color: white;
+}
+
+.conteiner .inicio table .filaNombreObra, 
+.filaDireccion, .filaNombreSolicitante,
+.filaNombreReferente, .filaNombreReferente,
+.filaPEPImputacion, .filaFecha{
+    width: 185px;
 }
 .conteiner .inicio table tr{
     border: 1px solid black;
 }
 
+
 .conteiner .inicio table input{
     margin: 0 5px;
     border: 0;
+
     
 }
 
 .conteiner .inicio table .inpname{
     margin: 0 5px;
-    width:456px;
+    width:440px;
     font-size: 15px;
     
 }
 .conteiner .inicio table .inptel{
-    margin: 0 5px;
-    width: 165px;
+    margin: 0 1px 0 5px;
+    width: 160px;
     font-size: 15px;
 }
 
-
+.conteiner .inicio table .nombres{
+    margin: 0 1px 0 5px;
+    width: 183px;
+    font-size: 15px;
+}
 .conteiner .inicio .inpnec{
-    width: 50px;
+    width: 48px;
     text-align: left;
 }
 
 
 .conteiner .inicio table textarea{
+    width:100%;
+    padding:3px;
+    font-size: 20px ;
     padding: 5px 5px; 
-    margin: 5px 0px;
+    margin: 5px auto;
     resize:none;
 }
+
+.conteiner .inicio table i{
+  text-align: center;
+  margin: 0 4px; 
+  /*color: red;*/
+}
+
+.formulario__input-error, .formulario__input-error1 {
+    color: green;
+	visibility: visible;
+}
+
+.formulario__input-error-activo {
+    color: red;
+	visibility: visible;
+}
+
 
 /*TABLA DE SELECCION DE OBRA*/
 
 .conteiner .seleccion table{
-    margin: 20px auto;
+    margin: 10px auto;
     width: 650px;
     height: 192px; 
     caption-side: bottom;  
     border-collapse: collapse;
     border:1px solid black;
+    
+    
 }
 .conteiner .seleccion table th{
+    
     background-color: rgba(128, 128, 128, 0.5);
-    height: 29px;
+   
+    height: 29px; 
+    border-right: none;
+    border-left: none;
+   
 }
 .conteiner .seleccion table td{
     text-indent: 70px; 
+    
+    
 }
 
 .conteiner .seleccion table .selotro{
     text-indent: 260px;
 }
+
+
+
+.seleccion table .formulario__input-error {
+    padding-left: 0;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-bottom:1px solid black;
+    text-align: right;
+    color: green;
+	visibility: visible;
+    
+}
+
+.seleccion table .formulario__input-error-activo {
+    padding-left: 0;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-bottom:1px solid black;
+    text-align: right;
+    color: red;
+	visibility: visible;
+}
+
 
 /*TABLA DINAMICA DE SELECION DE TAREAS*/
 
@@ -122,6 +196,7 @@ body{
     caption-side: bottom;  
     border-collapse: collapse;
 }
+
 .conteiner .sectdocument table .titu {
     background-color: rgba(173, 216, 230, 0.5);
     text-align: center;
@@ -129,8 +204,10 @@ body{
     margin-top: 10px;
     width: 650px;
     height: 50px;
+   
 }
 .conteiner .sectdocument table .tituloseleccion{
+    position: relative;
     background-color: rgba(128, 128, 128, 0.5);
     
 }
@@ -140,7 +217,7 @@ body{
     
 }
 .conteiner .sectdocument .tdarea{
-    padding: 5px 5px; 
+    padding: 5px; 
    
 }
 .conteiner .sectdocument .tdotro{
@@ -150,8 +227,19 @@ body{
     border: 1px solid black;
     padding: 3px 3px; 
     width:inherit;
+}
+
+.conteiner .sectdocument td{
+    border: 1px solid black;
+    padding: 3px 3px; 
+    width:inherit;
+}
+
+.conteiner .sectdocument .textotachado{
+    text-decoration:line-through;
     
 }
+
 
 .conteiner .sectdocument .aplic{
     width: 52px;
@@ -160,18 +248,44 @@ body{
 
 
 .conteiner .sectdocument textarea{
+    width:100%;
+    margin:0 auto;
+    padding:3px;
     resize: none;
     font-size: 20px ;
+    
+
 }
+
+.sectdocument caption {
+    margin: 20px auto;
+    text-align: justify;
+   
+    
+}
+
 .conteiner .sectdocument table input{
     margin-left: 15px;
     margin-top: auto;
    
 }
 
-textarea{
-    resize: none;
+.sectdocument .formulario__input-error {
+    position:absolute;
+    display: flex;
+    border: none;
+    margin: 1px 0 1px -23px;
+    text-align: right;
+    color: green;
+	visibility: visible;
+    
 }
+
+.sectdocument .formulario__input-error-activo {
+    color: red;
+	visibility: visible;
+}
+
 
 /*OTROS*/
  button{
@@ -198,3 +312,253 @@ textarea{
 	border-radius: 3px;
 	display: none;
 }
+
+
+
+
+/*BURBUJA DE COMENTARIOS POPUP*/
+
+.overlay {
+    position: relative;
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	display:flex;
+	visibility: hidden;
+}
+
+.overlay.active {
+	visibility: visible;
+  
+}
+
+.popup {
+    position: absolute;
+    display: block;
+	background: #F8F8F8;
+    margin: 50% 50%;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	margin:10px 250px;
+    width: 750px;
+
+	transition: .7s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+    position: absolute;
+	font-size: 16px;
+	line-height: 16px;
+	display: flex;
+	right: 0;
+    top:-5px;
+	transition: .3s ease all;
+	color: #BBBBBB;
+    padding: 10px 10px 0 0;
+    z-index: 10;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+.popup h3 {
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 10px;
+    margin-top: 10px;
+	opacity: 0;
+}
+
+.popup p {
+	font-size: 15px;
+	font-weight: 300;
+    margin: 0 15px;
+    padding-bottom: 25px;
+    text-align: left;
+	opacity: 0;
+}
+
+
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active { transform: scale(1); opacity: 1;}
+.popup.active h3 { animation: entradaTitulo .7s ease .5s forwards; }
+.popup.active p { animation: entradaSubtitulo .7s ease .5s forwards; }
+
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/*POPUP*IMPRESION*/
+
+/*.over {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+}
+
+.over .active {
+	visibility: visible;
+}*/
+
+.pop {
+    position: absolute;
+	background: #F8F8F8;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    margin: 15% 0;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 600px;
+    height: auto;
+	
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.pop .btn {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.pop .btn:hover {
+	color: #000;
+}
+
+.pop h3 {
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.pop h4 {
+	font-size: 20px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.pop svg {
+	width: 100px;
+    height: auto;
+}
+
+.pop .circError {
+	font-size: 30px;
+}
+
+.pop form .contenedor-inputs {
+	opacity: 0;
+}
+
+.pop form .contenedor-inputs input {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 52px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+	border: 1px solid #BBBBBB;
+}
+
+.pop form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.pop form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.pop.active {	transform: scale(1); opacity: 1; }
+.pop.active h3 { animation: entrada .8s ease .5s forwards; }
+.pop.active h4 { animation: Subtitulo .8s ease .5s forwards; }
+.pop.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entrada {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes Subtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
