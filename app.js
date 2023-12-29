@@ -1,17 +1,16 @@
 /* VALIDACION DE DATOS PERSONALES */
+const formulario = document.getElementById('formulario');
 const inputsInicio = document.querySelectorAll('#inicio input');
 const inputInterferencia = document.querySelectorAll('#radiointerferencia,#radiointerferencia1');
 const inputSeleccion = document.querySelectorAll('#seleccion input');
 
 const expresiones = {
-	obra: /^[a-zA-ZÀ-ÿ0-9\s\_\-\ \.]{1,54}$/, // Letras, numeros, guion y guion_bajo /^[a-zA-Z0-9\_\-]{4,53}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s\.]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    nombre: /^[a-zA-ZÀ-ÿ0-9\s\_\ \.]{5,54}$/, // Letras, numeros, guion y guion_bajo /^[a-zA-Z0-9\_\-]{4,53}$/, 
+	obra: /^[a-zA-ZÀ-ÿ0-9\s\_\-\ \.]{5,54}$/, // Letras, numeros, guion y guion_bajo /^[a-zA-Z0-9\_\-]{4,53}$/, 
+	//nombre: /^[a-zA-ZÀ-ÿ\s\.]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     fecha:/^((0[1-9]|1[012]|[1-9])[- /.](0[1-9]|[12][0-9]|3[01]|[1-9])[- /.](19|20)\d\d|(19|20)\d\d[- /.](0[1-9]|1[012]|[1-9])[- /.](0[1-9]|[12][0-9]|3[01]|[1-9]))$/,
 	telefono: /^\d{7,14}$/, // 7 a 14 numeros.
-   
 }
-
-console.log()
 
 const campos = {
 
@@ -24,6 +23,10 @@ const campos = {
     PEPImputacion: false,
     fechaNecesidad: false,
     interferencias:false,
+    nombreResponsable: false,
+    telefonoResponsable: false,
+    liberacion: false,
+    fechaLiberacion: false,
     seleccion:false,
     tareas:false,
 }
@@ -32,7 +35,7 @@ const validarFormulario = (e) => {
 
     switch (e.target.name) {
 		case "nombreObra":
-			validarCampo(expresiones.obra, e.target, 'nombreObra');
+			validarCampo(expresiones.nombre, e.target, 'nombreObra');
 		break;
 		case "direccion":
 			validarCampo(expresiones.obra, e.target, 'direccion');
@@ -55,8 +58,22 @@ const validarFormulario = (e) => {
         case "fechaNecesidad":
 			validarCampo(expresiones.fecha, e.target, 'fechaNecesidad');
 		break;
+        case "nombreResponsable":
+			validarCampo(expresiones.obra, e.target, 'nombreResponsable');
+		break;
+		case "telefonoResponsable":
+			validarSubCampos(expresiones.telefono, e.target, 'nombreResponsable');
+		break;
+        case "tipoInterferencia":
+			validarCampo(expresiones.obra, e.target, 'liberacion');
+		break;
+        case "fechaLiberacion":
+			validarSubCampos(expresiones.fecha, e.target, 'liberacion');
+		break;
 	}
 }
+
+//validarCampo(expresiones.obra, document.getElementById("inputTipoInterferencia"), 'liberacion');
 
 
 /* VALIDACION DE DATOS PERSONALES */
@@ -78,6 +95,7 @@ const validarCampo = (expresion, input, campo) => {
 	}
 }
 
+
 const validarSubCampos = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
 		/*document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
@@ -91,7 +109,12 @@ const validarSubCampos = (expresion, input, campo) => {
         if(campo == 'nombreReferente'){
             campos.telefonoReferente = true;
         }
-	
+        if(campo == 'nombreResponsable'){
+            campos.telefonoResponsable = true;
+        };
+        if(campo == 'liberacion'){
+            campos.fechaLiberacion = true;
+        };
     } else {
 		/*document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');*/
@@ -104,6 +127,12 @@ const validarSubCampos = (expresion, input, campo) => {
         }
         if(campo == 'nombreReferente'){
             campos.telefonoReferente = false;
+        };
+        if(campo == 'nombreResponsable'){
+            campos.telefonoResponsable = false;
+        };
+        if(campo == 'liberacion'){
+            campos.fechaLiberacion = false;
         };
 	}
 }
@@ -204,6 +233,9 @@ const validarTareas = (radio) =>{
         document.querySelector(`#${resultado} .formulario__input-error`).classList.add('formulario__input-error-activo');
         campos.tareas = false;
     };
+
+
+
     
 };
 
@@ -217,15 +249,20 @@ $fecha = document.getElementById("fecha")
 $fecha.innerHTML= dia +"/"+mes+"/"+ano
 
 document.getElementById("inputFechaNecesidad").setAttribute("min", ano +"-"+ mes +"-"+ dia)
+document.getElementById("inputFechaLiberacion").setAttribute("min", ano +"-"+ mes +"-"+ dia)
 
 /* SELECCION DE INTERFERENCIAS */
 
 function verificarRI(){
     
     if(document.getElementById("radiointerferencia").checked){
-        document.getElementById("texinterferencia").style.display = 'contents';
+        document.getElementById("grupo__nombreResponsable").style.display = '';
+        document.getElementById("grupo__liberacion").style.display = '';
+        document.getElementById("grupo__liberacionArear").style.display = '';
     } else {
-        document.getElementById("texinterferencia").style.display = 'none';
+        document.getElementById("grupo__nombreResponsable").style.display = 'none';
+        document.getElementById("grupo__liberacion").style.display = 'none';
+        document.getElementById("grupo__liberacionArear").style.display = 'none';
     };
 };
 
@@ -266,24 +303,27 @@ function texAreaObra(){
 
 
 
+
+//document.getElementById("inputNombreReferente").focus();
+
+
 /* VALIDACION TOTAL E IMPRESION PDF*/
-
-
 
 /* IMPRESION EN PDF */
 document.addEventListener("DOMContentLoaded",()=>{
     const $boton = document.getElementById("PDF");
-    $boton.addEventListener("click",()=>{
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
         
         validarCampo(expresiones.nombre, document.getElementById("inputNombreObra"), 'nombreObra')
       
         validarCampo(expresiones.obra,document.getElementById("inputDireccion"), 'direccion')
         
-        validarCampo(expresiones.nombre, document.getElementById("inputNombreSolicitante"), 'nombreSolicitante')
+        validarCampo(expresiones.obra, document.getElementById("inputNombreSolicitante"), 'nombreSolicitante')
         
         validarSubCampos(expresiones.telefono, document.getElementById("inputTelefonoSolicitante"), 'nombreSolicitante')
         
-        validarCampo(expresiones.nombre, document.getElementById("inputNombreReferente"), 'nombreReferente')
+        validarCampo(expresiones.obra, document.getElementById("inputNombreReferente"), 'nombreReferente')
         
         validarSubCampos(expresiones.telefono, document.getElementById("inputTelefonoReferente"), 'nombreReferente')
         
@@ -295,8 +335,25 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         validarSeleccion();
 
-        /*validarTareas(5);*/
 
+
+
+        if(document.getElementById("radiointerferencia").checked){
+            validarCampo(expresiones.obra, document.getElementById("inputNombreResponsable"), 'nombreResponsable');
+		    validarSubCampos(expresiones.telefono,document.getElementById("inputTelefonoResponsable"), 'nombreResponsable');
+		    validarCampo(expresiones.obra, document.getElementById("inputTipoInterferencia"), 'liberacion');
+		    validarSubCampos(expresiones.fecha, document.getElementById("inputFechaLiberacion"),'liberacion');
+            
+        } else {
+            campos.nombreResponsable = true;
+            campos.telefonoResponsable = true;
+            campos.liberacion = true;
+            campos.fechaLiberacion = true;
+        };
+
+        if(document.getElementById("obra11").checked){
+            campos.tareas = true;
+        }
 
         var fechanececidad = document.getElementById("inputFechaNecesidad");
         //console.log(document.getElementById("inputFechaNecesidad").value)
@@ -311,22 +368,33 @@ document.addEventListener("DOMContentLoaded",()=>{
             campos.fechaNecesidad == true && 
             campos.interferencias == true &&
             campos.seleccion == true &&
-            campos.tareas == true){
+            campos.tareas == true &&
+            campos.nombreResponsable ==true &&
+            campos.telefonoResponsable == true &&
+            campos.liberacion == true &&
+            campos.fechaLiberacion == true){
     
             
             const $elementoParaConvertir = document.getElementById("conteiner");
+
+            let nombrepdf = document.getElementById("inputNombreObra").value.replace(/ /g, "_")
+            console.log(nombrepdf)
+
             html2pdf()
             .set({
-                margin:2,
-                filename:"Solicitud Obra Civiles.pdf",
+                margin:1,
+               // `#${resultado} .formulario__input-error i`
+               //document.getElementById("inputFechaLiberacion").setAttribute("min", ano +"-"+ mes +"-"+ dia)
+               //"inputNombreObra"
+                filename:`${document.getElementById("inputFechaNecesidad").value}` + " - " + `${nombrepdf}` + ".pdf",
                 image:{
                 type: "jpeg",
                 quality: 0.98
                 },
                 html2canvas:{
-                scale: 2,
-                logging: true,
-                dpi: 192,
+                scale: 3,
+                //logging: true,
+                //dpi: 192,
                 letterRendering: true,
                 },
                 jsPDF:{
@@ -344,6 +412,7 @@ document.addEventListener("DOMContentLoaded",()=>{
                 alert("Solicitud Creada, desde ya gracias!\n    EOC - Equipo de Obras Civiles")
                 }, 1000);*/
 
+                document.getElementById("nombreDocumentoPDF").innerHTML = `${document.getElementById("inputFechaNecesidad").value}` + " - " + `${nombrepdf}` + ".pdf";
                 over.classList.add('active');
                 document.getElementById("impresionOk").classList.add('active');
                 console.log("se esta imprimendo")
@@ -389,6 +458,7 @@ const links = document.querySelectorAll('#conteiner a');
 const overlay = document.getElementById('overlay');
 const over = document.getElementById('over');
 btnCerrarPopup = document.querySelectorAll('#overlay a');
+botonAceptar = document.querySelectorAll('#overlay button');
 /*btnCerrarImpresion = document.querySelector('#btnImp');
 btnCerrarErr = document.querySelector('#btnErr');*/
 
@@ -419,8 +489,11 @@ window.addEventListener('click', e => e.target == over && cerrarImp(e));
 });*/
 
 btnCerrarPopup.forEach((cerrar) => {
-	cerrar.addEventListener('click', cerrarPopup);
-    
+	cerrar.addEventListener('click', cerrarPopup);   
+});
+
+botonAceptar.forEach((cerrar) => {
+    cerrar.addEventListener('click', cerrarPopup);   
 });
 
 window.addEventListener('click', e => e.target == overlay && cerrarPopup(e));
@@ -430,7 +503,6 @@ const validarLinks = (e) => {
 
     
     popup = document.getElementById(e.target.name),
-    console.log(e.target.name)
     
     document.getElementById(popup.id).style.display = 'block';
     overlay.classList.add('active');
