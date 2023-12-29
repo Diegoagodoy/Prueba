@@ -48,7 +48,7 @@ body{
 /*TABLA DE DATOS PERSONALES*/
 .conteiner .inicio table {
     margin: 20px auto 0 auto;
-    width: 650px;
+    width: 670px;
     height: auto; 
     caption-side: bottom;  
     border-collapse: collapse;
@@ -71,7 +71,7 @@ a:hover{
 .filaDireccion, .filaNombreSolicitante,
 .filaNombreReferente, .filaNombreReferente,
 .filaPEPImputacion, .filaFecha{
-    width: 185px;
+    width: 190px;
 }
 .conteiner .inicio table tr{
     border: 1px solid black;
@@ -80,10 +80,10 @@ a:hover{
 
 .conteiner .inicio table input{
     margin: 0 5px;
-    border: 0;
-
-    
+    border: 0;   
 }
+
+
 
 .conteiner .inicio table .inpname{
     margin: 0 5px;
@@ -95,7 +95,7 @@ a:hover{
     margin: 0 1px 0 5px;
     width: 160px;
     font-size: 15px;
-}
+};
 
 .conteiner .inicio table .nombres{
     margin: 0 1px 0 5px;
@@ -107,6 +107,16 @@ a:hover{
     text-align: left;
 }
 
+.conteiner .inicio .espacio{
+    height: 5px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.nombretd{
+    width: 175px;
+}
 
 .conteiner .inicio table textarea{
     width:100%;
@@ -133,12 +143,22 @@ a:hover{
 	visibility: visible;
 }
 
+.conteiner .inicio table tr .filaLiberacion{
+    background-color: rgba(141, 104, 104, 0.5);
+    width: 150px;  
+}
+
+.conteiner .inicio table tr .filaLiberTel{
+    background-color: rgba(141, 104, 104, 0.5);
+    width: 25px;  
+}
+
 
 /*TABLA DE SELECCION DE OBRA*/
 
 .conteiner .seleccion table{
     margin: 10px auto;
-    width: 650px;
+    width: 670px;
     height: 192px; 
     caption-side: bottom;  
     border-collapse: collapse;
@@ -191,7 +211,7 @@ a:hover{
 
 .conteiner .sectdocument table {
     margin: 10px auto;
-    width: 650px;
+    width: 670px;
     height: auto;
     caption-side: bottom;  
     border-collapse: collapse;
@@ -202,7 +222,7 @@ a:hover{
     text-align: center;
     font-size: 24px;
     margin-top: 10px;
-    width: 650px;
+    width: 670px;
     height: 50px;
    
 }
@@ -286,17 +306,20 @@ a:hover{
 	visibility: visible;
 }
 
+/*BOTON ENVIAR*/
 
-/*OTROS*/
  button{
     display: block;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 8px;
 }
+
+/*OTROS*/
+
 .botonprueba{
     display: block;
     margin: 0 auto;
-    padding: 8px;
+    
 }
 .list {
     display: block;
@@ -479,12 +502,49 @@ a:hover{
 }
 
 .pop h4 {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 300;
-	margin-bottom: 40px;
+	margin-bottom: 5px;
 	opacity: 0;
 }
 
+.pop .textError {
+	font-size: 18px;
+	font-weight: 300;
+	margin: 10px auto 30px auto;
+	opacity: 0;
+}
+
+.pop h5 {
+    font-size: 15px;
+	font-weight: 200;
+	margin: 15px auto 15px auto;
+    color: #c45ee3;
+	opacity: 0;
+}
+
+.pop .nomDoc {
+    margin-top: 0;
+    color: black;
+    font-weight:bold;
+    font-size: 15px;
+	margin-bottom: 20px;
+	opacity: 1;
+}
+
+.pop h6 {
+	font-size: 12px;
+	font-weight: 300;
+	margin-bottom: 0px;
+	opacity: 1;
+}
+
+.pop .gracias {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	opacity: 1;
+}
 .pop svg {
 	width: 100px;
     height: auto;
@@ -494,22 +554,9 @@ a:hover{
 	font-size: 30px;
 }
 
-.pop form .contenedor-inputs {
-	opacity: 0;
-}
-
-.pop form .contenedor-inputs input {
-	width: 100%;
-	margin-bottom: 20px;
-	height: 52px;
-	font-size: 18px;
-	line-height: 52px;
-	text-align: center;
-	border: 1px solid #BBBBBB;
-}
-
-.pop form .btn-submit {
-	padding: 0 20px;
+.pop button {
+    margin: 0px auto 30px auto;
+	padding: 0 10px;
 	height: 40px;
 	line-height: 40px;
 	border: none;
@@ -522,7 +569,7 @@ a:hover{
 	transition: .3s ease all;
 }
 
-.pop form .btn-submit:hover {
+.pop button:hover {
 	background: rgba(94,125,227, .9);
 }
 
@@ -532,6 +579,7 @@ a:hover{
 .pop.active {	transform: scale(1); opacity: 1; }
 .pop.active h3 { animation: entrada .7s ease .5s forwards; }
 .pop.active h4 { animation: Subtitulo .7s ease .5s forwards; }
+.pop.active h5 { animation: requerimiento 1.5s ease .5s forwards; }
 
 
 
@@ -548,6 +596,18 @@ a:hover{
 }
 
 @keyframes Subtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes requerimiento {
 	from {
 		opacity: 0;
 		transform: translateY(25px);
