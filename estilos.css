@@ -3,13 +3,84 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    border: 3px solid gray;
-    margin: 0 auto;
 
-    width: 900px;
-    height: auto
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.03);
+    
 }
+
+.contenedor-general{
+    position: absolute;
+    border: 3px solid gray;
+    margin: 130px 20%;
+    width: 900px;
+    height: auto;
+    background: white;  
+    
+}
+
+
+.inicio-inicio .telecom{
+    position: fixed;
+    display: flex;
+    background-color:rgb(248, 248, 248);
+    border: 2px solid gray;
+    height: 48px;
+    width: 100%;
+    margin: auto 0px;
+    z-index: 5;
+}
+
+.telecom img{
+    margin: auto 12% auto 5%;
+}
+.inicio-inicio .espacio{
+    position: fixed;
+    background-color: #000;
+    height: 80px;
+    width: 100%;
+    top:48px;
+}
+
+.inicio-inicio .telecom p{
+    color: #660cb1;
+    margin: auto 15px;
+    font-size: 20px;
+}
+
+.inicio-inicio .telecom a{
+    color: #660cb1;
+}
+
+.inicio-inicio .telecom a:hover{
+    color: #0bb3b3;
+}
+
+.contenedor-general .logo-obras img{
+    width: 170px;
+    margin: -120px 0 0 0px;
+    position:absolute;
+    filter: drop-shadow(0px 1px 5px rgb(238, 241, 4));
+    animation: rotar 10s linear infinite ;
+    
+}
+
+
+
+@keyframes rotar{
+    0%,100%{
+        transform:rotate(3deg)
+    }
+    50%{
+        transform: rotate(-3deg)
+    }
+
+}
+
+
 
 .conteiner {
     margin: 30px auto;
@@ -336,8 +407,20 @@ a:hover{
 	display: none;
 }
 
+footer{
+    text-align: center;
+    font-size: 18px;
+    display: inherit;
+    margin-bottom: 15px;
+}
 
+footer a{
+    color:blue;
+}
 
+footer a:hover{
+    color:hotpink;
+}
 
 /*BURBUJA DE COMENTARIOS POPUP*/
 
