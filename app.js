@@ -8,6 +8,7 @@ const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ0-9\s\_\ \.]{5,54}$/, // Letras, numeros, guion y guion_bajo /^[a-zA-Z0-9\_\-]{4,53}$/, 
 	obra: /^[a-zA-ZÀ-ÿ0-9\s\_\-\ \.]{5,54}$/, // Letras, numeros, guion y guion_bajo /^[a-zA-Z0-9\_\-]{4,53}$/, 
 	//nombre: /^[a-zA-ZÀ-ÿ\s\.]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     fecha:/^((0[1-9]|1[012]|[1-9])[- /.](0[1-9]|[12][0-9]|3[01]|[1-9])[- /.](19|20)\d\d|(19|20)\d\d[- /.](0[1-9]|1[012]|[1-9])[- /.](0[1-9]|[12][0-9]|3[01]|[1-9]))$/,
 	telefono: /^\d{7,14}$/, // 7 a 14 numeros.
 }
@@ -50,7 +51,7 @@ const validarFormulario = (e) => {
 			validarCampo(expresiones.obra, e.target, 'nombreReferente');
 		break;
 		case "telefonoReferente":
-			validarSubCampos(expresiones.telefono, e.target, 'nombreReferente');
+			validarSubCampos(expresiones.correo, e.target, 'nombreReferente');
 		break;
         case "PEPImputacion":
 			validarCampo(expresiones.obra, e.target, 'PEPImputacion');
@@ -62,7 +63,7 @@ const validarFormulario = (e) => {
 			validarCampo(expresiones.obra, e.target, 'nombreResponsable');
 		break;
 		case "telefonoResponsable":
-			validarSubCampos(expresiones.telefono, e.target, 'nombreResponsable');
+			validarSubCampos(expresiones.correo, e.target, 'nombreResponsable');
 		break;
         case "tipoInterferencia":
 			validarCampo(expresiones.obra, e.target, 'liberacion');
@@ -325,7 +326,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         
         validarCampo(expresiones.obra, document.getElementById("inputNombreReferente"), 'nombreReferente')
         
-        validarSubCampos(expresiones.telefono, document.getElementById("inputTelefonoReferente"), 'nombreReferente')
+        validarSubCampos(expresiones.correo, document.getElementById("inputTelefonoReferente"), 'nombreReferente')
         
         validarCampo(expresiones.obra, document.getElementById("inputPEPImputacion"), 'PEPImputacion');
         
@@ -340,7 +341,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         if(document.getElementById("radiointerferencia").checked){
             validarCampo(expresiones.obra, document.getElementById("inputNombreResponsable"), 'nombreResponsable');
-		    validarSubCampos(expresiones.telefono,document.getElementById("inputTelefonoResponsable"), 'nombreResponsable');
+		    validarSubCampos(expresiones.correo,document.getElementById("inputTelefonoResponsable"), 'nombreResponsable');
 		    validarCampo(expresiones.obra, document.getElementById("inputTipoInterferencia"), 'liberacion');
 		    validarSubCampos(expresiones.fecha, document.getElementById("inputFechaLiberacion"),'liberacion');
             

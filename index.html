@@ -12,11 +12,11 @@
 <body>
     
     <div class="inicio-inicio">
-        <section class="telecom">
+        <section class="telecom" >
             <img src="Imagenes/telecom.png"  alt=""> 
-            <p><a href="PagConstruccion.html">Instructivo</a></p>
-            <p><a href="PagConstruccion.html">Documentacion</a></p>
-            <p><a href="PagConstruccion.html">Obras Terminadas</a></p>
+            <p><a href="PagConstruccion.html">Tipologias de Obra</a></p>
+            <p><a href="PagConstruccion.html">Documentacion de Obra</a></p>
+            <p><a href="PagConstruccion.html">Obras Terminadas y Fotos</a></p>
             <p><a href="PagConstruccion.html">Nuestro Equipo</a></p>
             <p><a href="PagConstruccion.html">Contacto</a></p>
         </section>
@@ -48,29 +48,29 @@
                      </tr>
                      <tr id="grupo__direccion">
                          <th class="filaDireccion"><a href="#" name="popupDireccion" class="btn-cerrar-popup" >Dirección del Sitio</a></th>
-                         <td colspan="6"><input id="inputDireccion" class="inpname" type="text"  name="direccion" maxlength="53"></td>
+                         <td colspan="6"><input id="inputDireccion" class="inpname" type="text"  name="direccion" maxlength="52"></td>
                          <td class="formulario__input-error" ><i class="fa"></i></td>
                      </tr>
                      <tr id="grupo__nombreSolicitante">
                          <th class="filaNombreSolicitante"><a href="#" name="popupNomSolicitante" class="btn-cerrar-popup" >Nombre del Solicitante</a></th>
-                         <td class="nombretd" colspan="1"><input id="inputNombreSolicitante" class="nombres"  type="text" name="nombreSolicitante" maxlength="22"></td>
+                         <td class="nombretd" colspan="1"><input id="inputNombreSolicitante" class="inpnombres"  type="text" name="nombreSolicitante" maxlength="22"></td>
                          <td class="formulario__input-error" ><i class="fa"></i></td>
-                         <th ><a href="#"  name="popupTelSolicitante" class="btn-cerrar-popup" >Teléfono</a></th>
-                         <td colspan="3"><input id="inputTelefonoSolicitante" class="inptel" type="tel"  name="telefonoSolicitante" maxlength="19"></td>
+                         <th class="filaTelefonoReferente"><a href="#"  name="popupTelSolicitante" class="btn-cerrar-popup" >Equipo</a></th>
+                         <td colspan="3"><input id="inputTelefonoSolicitante" list="grupo" class="inpemail" type="tel"  name="telefonoSolicitante" maxlength="38"></td>
                          <td class="formulario__input-error1" ><i class="fa"></i></td>
                          
                      </tr>
                      <tr id="grupo__nombreReferente">
                          <th class="filaNombreReferente"><a href="#" name="popupNomReferente"  class="btn-cerrar-popup" >Nombre Referente Local</a></th>
-                         <td class="nombretd" colspan="1"><input id="inputNombreReferente" class="nombres" type="text"  name="nombreReferente" maxlength="22"></td>
+                         <td class="nombretd" colspan="1"><input id="inputNombreReferente" class="inpnombres" type="text"  name="nombreReferente" maxlength="22"></td>
                          <td class="formulario__input-error" ><i class="fa"></i></td>
-                         <th class="filaTelefonoReferente"><a href="#" name="popupTelReferente" class="btn-cerrar-popup" >Teléfono</a></th>
-                         <td colspan="3"><input id="inputTelefonoReferente" class="inptel" type="tel"  name="telefonoReferente" maxlength="19"></td>
+                         <th class="filaTelefonoReferente"><a href="#" name="popupTelReferente" class="btn-cerrar-popup" >E-mail</a></th>
+                         <td colspan="3" class="email"><input id="inputTelefonoReferente" class="inpemail" type="tel"  name="telefonoReferente" value="@teco.com.ar" maxlength="32"></td>
                          <td class="formulario__input-error1" ><i class="fa"></i></td>
                      </tr>
                      <tr id="grupo__PEPImputacion">
                          <th class="filaPEPImputacion"><a href="#" name="popupPEP"  class="btn-cerrar-popup" >PEP de Imputación</a></th>
-                         <td colspan="6"><input id="inputPEPImputacion" class="inpname" type="text"  name="PEPImputacion" maxlength="53"></td>
+                         <td colspan="6"><input id="inputPEPImputacion" class="inpname" type="text"  name="PEPImputacion" maxlength="52"></td>
                          <td class="formulario__input-error" ><i class="fa"></i></td>
                      </tr>
                      <tr id="grupo__fechaNecesidad">
@@ -87,17 +87,17 @@
                      </tr>
                      <tr id="grupo__nombreResponsable" style="display:none;" >
                          <th colspan="1" class="filaLiberacion"><a href="#" name="popupNomResponsable"  class="btn-cerrar-popup" >Nombre Responsable</a></th>
-                         <td class="nombretd" colspan="1"><input id="inputNombreResponsable" class="nombres" type="text"  name="nombreResponsable" maxlength="20"></td>
+                         <td class="nombretd" colspan="1"><input id="inputNombreResponsable" class="inpnombres" type="text"  name="nombreResponsable" maxlength="20"></td>
                          <td class="formulario__input-error" ><i class="fa"></i></td>
-                         <th class="filaLiberTel"><a href="#" name="popupTelResponsable" class="btn-cerrar-popup" >Teléfono</a></th>
-                         <td colspan="3"><input id="inputTelefonoResponsable" class="inptel" type="tel"  name="telefonoResponsable" maxlength="19"></td>
+                         <th class="filaLiberTel"><a href="#" name="popupTelResponsable" class="btn-cerrar-popup" >E-mail</a></th>
+                         <td colspan="3"><input id="inputTelefonoResponsable" class="inpemail" type="tel"  name="telefonoResponsable" value="@teco.com.ar" maxlength="32"></td>
                          <td class="formulario__input-error1" ><i class="fa"></i></td>
                      </tr>
                      <tr id="grupo__liberacion" style="display:none;">
                          <th colspan="1" class="filaLiberacion"><a href="#" name="popupTipoInterferencia"  class="btn-cerrar-popup" >Tipo de Interferencia</a></th>
-                         <td class="nombretd"><input id="inputTipoInterferencia" type="text"  name="tipoInterferencia" maxlength="20"></td>
+                         <td class="nombretd"><input id="inputTipoInterferencia" class="inpnombres"  type="text"  name="tipoInterferencia" maxlength="20"></td>
                          <td class="formulario__input-error" ><i class="fa"></i></td>
-                         <th colspan="2" class="filaLiberacion"><a href="#" name="popupFechaLiberacion" class="btn-cerrar-popup" >Liberación Aprox.</a></th>
+                         <th colspan="2" class="filaLiberacion"><a href="#" name="popupFechaLiberacion" class="btn-cerrar-popup" >Fecha de Liberación</a></th>
                          <td colspan="2" style="text-align: right;"><input id="inputFechaLiberacion" class="" type="date" min='' name="fechaLiberacion"></td>
                          <td class="formulario__input-error1" ><i class="fa"></i></td>
                      </tr>
@@ -820,17 +820,18 @@
              <h3>Nombre del Solicitante</h3>  
              <p>Campo de carácter Obligatorio.<br>
                  Ingrese el Nombre de la Persona Solicitante de la obra o Persona al frente del diseño a entregar.<br> 
-                 <br> Este dato junto a su teléfono es sumamente importante para ultimar algún tipo de detalle o bien la 
+                 <br> Este dato es sumamente importante para ultimar algún tipo de detalle si es que lo requiere o bien la 
                  comunicación constante como nuestro cliente interno.
              </p>
          </div>
         
          <div class="popup" id="popupTelSolicitante">
              <a href="#inicio" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
-             <h3>Teléfono Solicitante</h3>  
-             <p>Campo de carácter Obligatorio.<br>
-                 Ingrese el teléfono de la Persona Solicitante de la obra o Persona al frente del diseño a entregar.<br> 
-                 <br> Este dato junto a su Nombre es sumamente importante para ultimar algún tipo de detalle o bien la comunicación constante como nuestro cliente interno.</p>
+             <h3>ET&DC Nombre de Equipo</h3>  
+             <p>Campo de carácter Obligatorio, Seleccionable y editable.<br>
+                 Seleccione o Ingrese el equipo al cual pertenece.<br> 
+                 <br> Este dato junto al Nombre del Solicitante nos permite la comunicacion a todo el equipo en caso de algun inconveniente o bien dar aviso del inicio y finalizacion de la Obra solicitada.
+                </p>
          </div>
         
          <div class="popup" id="popupNomReferente">
@@ -838,26 +839,30 @@
              <h3>Nombre Referente Local</h3>  
              <p>Campo de carácter Obligatorio.<br>
                  Ingrese el Nombre de la Persona Referente Local del sitio o edificio.<br> 
-                 <br> Este dato junto a su teléfono es muy importante para realizar consultas sobre el edificio como también para darle aviso de la fecha de inicio de obra.<br>
-                 Tenga en cuenta que el grupo o el solicitante tendrá la obligación de avisar a quienes crean necesarios de la obra a realizarse a futuro.
+                 <br> Este dato junto a su e-mail es muy importante para realizar consultas sobre el edificio como también para darle aviso de la fecha de inicio de obra.<br>
+                 Tenga en cuenta que el Equipo o el Solicitante tendrá la obligación de avisar a quienes crean necesarios de las obras a realizarse a futuro.
              </p>
             
          </div>
         
          <div class="popup" id="popupTelReferente">
              <a href="#inicio" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
-             <h3>Teléfono Referente</h3>  
+             <h3>E-mail del Referente</h3>  
              <p>Campo de carácter Obligatorio.<br>
-                 Ingrese el teléfono de la Persona Referente del sitio o edificio.<br> 
-                 <br> Este dato junto a su Nombre es sumamente importante para dar aviso de inicio de obra y estar comunicados por algún inconveniente que pueda surgir en la obra.
+                 Ingrese el e-mail de la Persona Referente del sitio o edificio.<br> 
+                 <br> Este dato junto a su Nombre nos permite por TEAMS conocer su telefono para dar aviso de inicio de obra y estar comunicados por algún inconveniente que pueda surgir en la obra.
              </p>
          </div>
         
          <div class="popup" id="popupPEP">
              <a href="#inicio" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
              <h3>PEP de Imputación</h3>  
-             <p>Campo de carácter Obligatorio.<br>
-                 Ingrese el N° de PEP de imputación del gasto correspondiente a la obra a solicitar.
+             <p>Campo de carácter <b>NO</b> Obligatorio.<br>
+                 Ingrese el N° de PEP de imputación del gasto correspondiente a la obra 
+                 a solicitar.<br>Si no Posee PEP Escriba en el campo <b>SIN PEP</b><br><br>
+                 Recuerde que si no hay PEP se empezara a trabajar en la documentacion ejecutiva de la Obra solicitada, 
+                 se le dara aviso a la contratista de las tareas pero <b>NO</b> se 
+                 le podra dar inicio hasta que no nos facilite un PEP con presupuesto para la imputacion de las tareas.
              </p>
          </div>
         
@@ -865,10 +870,10 @@
              <a href="#inicio" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
              <h3>Fecha de Necesidad</h3>  
              <p>Campo de carácter Obligatorio.<br>
-                 Ingrese la Fecha en la cual usted necesita la obra terminada<br><br> 
+                 Ingrese la Fecha de necesidad (obra terminada)<br><br> 
                  Tenga en cuenta que si los datos del formulario y el plano DWG subidos a 
                  JIRA son correctos y no necesitan de una corrección, 
-                 las fechas de entrega de obra se acortarán!, pero aun así según la tipología
+                 las fechas de entrega de obra se acortarán! pero aun así según la tipología
                  de obra a realizar junto a los procesos internos en el equipo de OBRAS CIVILES 
                  disponemos de un tiempo preliminar para la ejecución de: 
                  <br><br>
@@ -890,8 +895,10 @@
                  A que llamamos <b>INTERFERENCIA!! </b><br>Ejemplo: Se solicita construir salas de energía 
                  y en la zona a intervenir se encuentra un Grupo Electrógeno que nos bloquea las ejecución 
                  de la tarea solicitada.<br><br>
-                 De haber una Interferencia bloqueante para la ejecución de obra marque la opción <b>SI</b> y se desplegarán más opciones y 
-                 estas opciones serán de campo obligatorio.<br><br>De no haber interferencias marque la opción <b>NO</b> y continue completando los campos siguientes
+                 De haber una Interferencia bloqueante para la ejecución de obra marque la opción <b>SI</b> y se desplegarán más opciones, 
+                 estas opciones serán de campo obligatorio.<br><br>
+                 Tenga en cuenta que si la interferencia nos permite empezar la obra lo haremos para cumplir plazos pero en el transcurso de esta se tendra que liberar para no generar retrasos y gastos adicinales no previstos. <br><br>
+                 De no haber interferencias marque la opción <b>NO</b> y continue completando los siguientes campos.
              </p>
          </div>
         
@@ -922,17 +929,17 @@
              <h3>Nombre del Responsable</h3>  
              <p>Campo de carácter Obligatorio.<br>
                  Ingrese el Nombre de la Persona Responsable de la liberación de las interferencias.<br> 
-                 <br> Este dato junto a su teléfono es muy importante para darle seguimiento a la fecha liberación.<br>
-                 Tenga en cuenta que el grupo o el solicitante tendrá la obligación de hacer cumplir la fecha y darle seguimiento a la liberación de interferencias.
+                 <br> Este dato junto a su e-mail es muy importante para darle seguimiento a la fecha liberación.<br>
+                 Tenga en cuenta que el equipo o el solicitante tendrá la obligación de hacer cumplir la fecha y darle seguimiento a la liberación de interferencias.
              </p>
          </div>
         
          <div class="popup" id="popupTelResponsable">
              <a href="#inicio" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
-             <h3>Teléfono Responsable</h3>  
+             <h3>E-mail del Responsable</h3>  
              <p>Campo de carácter Obligatorio.<br>
-                 Ingrese el teléfono de la Persona Responsable de la liberación de las interferencias.<br> 
-                 <br> Este dato junto a su Nombre es sumamente importante para darle seguimiento a la liberación de interferencias.
+                 Ingrese el e-mail de la Persona Responsable de la liberación de las interferencias.<br> 
+                 <br> Este dato junto a su Nombre y fecha de liberacion es sumamente importante para darle seguimiento a las tareas de interferencias.
              </p>
          </div>
         
@@ -1069,6 +1076,62 @@
              <h6>Sugerencias o dudas escribinos a <a href="mailto:Obrasciviles@teco.com.ar?subject=NECESITO AYUDA"><i class="fa fa-envelope-o" aria-hidden="true" style="color: brown;"></i> ET&DC - Obras Civiles y Centralizadas</a> Por inconvenientes con el formulario comunícate con <a href="https://api.whatsapp.com/send?phone=1165398192&text=Hola, Necesito Ayuda!"target="blank"><i class="fa fa-brands fa-whatsapp fa-xl" style="color: green;"></i> Diego A. Godoy 15-6539-8192</a></h6>
          </footer>
     </div> 
+    <datalist id="grupo">
+        <option value="AMBA - Stream CABA Norte"></option>
+        <option value="AMBA - Stream CABA Sur/GBA Sur"></option>
+        <option value="AMBA - Stream DC Hornos"></option>
+        <option value="AMBA - Stream DC Pacheco"></option>
+        <option value="AMBA - Stream DC San Lorenzo"></option>
+        <option value="AMBA - Stream GBA Norte"></option>
+        <option value="AMBA - Stream GBA Oeste"></option>
+        <option value="Capacidad AMBA"></option>
+        <option value="Capacidad Entre Ríos"></option>
+        <option value="Capacidad Lice Santa Fe"></option>
+        <option value="Capacidad Lino Chaco-Formosa"></option>
+        <option value="Capacidad Lino Corrientes-Misiones"></option>
+        <option value="Capacidad Lisu Cañada"></option>
+        <option value="Capacidad Lisu Rosario"></option>
+        <option value="Capacidad Lisu Venado"></option>
+        <option value="Capacidad Medi&Noa"></option>
+        <option value="Capacidad PBA&PAT"></option>
+        <option value="LITO - Stream Chaco"></option>
+        <option value="LITO - Stream Corrientes"></option>
+        <option value="LITO - Stream Entre Ríos"></option>
+        <option value="LITO - Stream Formosa"></option>
+        <option value="LITO - Stream Misiones"></option>
+        <option value="LITO - Stream Rosario"></option>
+        <option value="LITO - Stream Santa Fe"></option>
+        <option value="MEDI - Stream Cuyo Mendoza"></option>
+        <option value="MEDI - Stream Cuyo San Juan y San Luis"></option>
+        <option value="MEDI - Stream GCBA Centro"></option>
+        <option value="MEDI - Stream GCBA Norte"></option>
+        <option value="MEDI - Stream GCBA Sur"></option>
+        <option value="MEDI - Stream Norte Noreste"></option>
+        <option value="MEDI - Stream Norte Sierras"></option>
+        <option value="MEDI - Stream Sur La Pampa"></option>
+        <option value="MEDI - Stream Sur Noreste"></option>
+        <option value="MEDI - Stream Sur Sudeste"></option>
+        <option value="MEDI - Stream Sur Sudoeste"></option>
+        <option value="NOA - Stream Catamarca"></option>
+        <option value="NOA - Stream Jujuy"></option>
+        <option value="NOA - Stream La Rioja"></option>
+        <option value="NOA - Stream Salta Jujuy Interior"></option>
+        <option value="NOA - Stream Salta"></option>
+        <option value="NOA - Stream Santiago del Estero"></option>
+        <option value="NOA - Stream Tucumán 1"></option>
+        <option value="NOA - Stream Tucumán 2"></option>
+        <option value="PBA - Stream Alto Valle"></option>
+        <option value="PBA - Stream Bahía 1"></option>
+        <option value="PBA - Stream Centro 1"></option>
+        <option value="PBA - Stream Costa 1"></option>
+        <option value="PBA - Stream Costa 2"></option>
+        <option value="PBA - Stream Norte 1"></option>
+        <option value="PBA - Stream Norte 2"></option>
+        <option value="PBA - Stream Patagonia"></option>
+        <option value="Share Service"></option>
+        <option value="Sostenibilidad"></option>
+        <option value="Mudanzas"></option>
+    </datalist>
  <script src="app.js"></script>
  <script src="html2pdf.bundle.min.js"></script>
 </body>

@@ -1,0 +1,28 @@
+table {
+    margin: 10px 0;
+    width: 900px;
+    height: auto;
+    caption-side: bottom;  
+    border-collapse: collapse;
+   
+}
+
+table .titu {
+    background-color: rgba(173, 216, 230, 0.5);
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    border: 1px solid black;
+   
+}
+
+
+
+table .detalle{
+    text-align: left;
+    border: 1px solid black; 
+}
+
+table .detalle a{
+    text-align: right;
+}

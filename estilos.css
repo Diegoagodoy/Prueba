@@ -8,7 +8,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.2);
     
 }
 
@@ -35,7 +35,7 @@ body{
 }
 
 .telecom img{
-    margin: auto 12% auto 5%;
+    margin: auto 5% auto 5%;
 }
 .inicio-inicio .espacio{
     position: fixed;
@@ -78,8 +78,8 @@ body{
 
 .contenedor-general .logo-obras img{
     width: 170px;
-    margin: -120px 0 0 0px;
-    position:absolute;
+    margin: -100px 0 0 -75px;
+    position:fixed;
     filter: drop-shadow(0px 1px 5px rgb(238, 241, 4));
     animation: rotar 10s linear infinite ;
     
@@ -136,7 +136,7 @@ body{
 /*TABLA DE DATOS PERSONALES*/
 .conteiner .inicio table {
     margin: 20px auto 0 auto;
-    width: 670px;
+    width: 700px;
     height: auto; 
     caption-side: bottom;  
     border-collapse: collapse;
@@ -159,51 +159,40 @@ a:hover{
 .filaDireccion, .filaNombreSolicitante,
 .filaNombreReferente, .filaNombreReferente,
 .filaPEPImputacion, .filaFecha{
-    width: 190px;
+    width: 178px;
 }
 .conteiner .inicio table tr{
     border: 1px solid black;
 }
 
+.conteiner .inicio table .filaTelefonoReferente{
+    width: 60px;
+}
+
 
 .conteiner .inicio table input{
-    margin: 0 5px;
+    margin: 0 2px;
     border: 0;   
 }
 
 
 
 .conteiner .inicio table .inpname{
-    margin: 0 5px;
-    width:440px;
-    font-size: 15px;
+    margin: 0 2px;
+    width: 440px;
+    font-size: 14px;
     
 }
-.conteiner .inicio table .inptel{
-    margin: 0 1px 0 5px;
-    width: 160px;
-    font-size: 15px;
+
+.conteiner .inicio table .inpemail{
+   
+    width: 250px;
+    text-align: right;
+    font-size: 14px;
 };
 
-.conteiner .inicio table .nombres{
-    margin: 0 1px 0 5px;
-    width: 183px;
-    font-size: 15px;
-}
-.conteiner .inicio .inpnec{
-    width: 48px;
-    text-align: left;
-}
-
-.conteiner .inicio .espacio{
-    height: 5px;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-}
-
 .nombretd{
-    width: 175px;
+    width: 165px;
 }
 
 .conteiner .inicio table textarea{
@@ -217,8 +206,7 @@ a:hover{
 
 .conteiner .inicio table i{
   text-align: center;
-  margin: 0 4px; 
-  /*color: red;*/
+  margin: 0 2px; 
 }
 
 .formulario__input-error, .formulario__input-error1 {
@@ -233,7 +221,7 @@ a:hover{
 
 .conteiner .inicio table tr .filaLiberacion{
     background-color: rgba(141, 104, 104, 0.5);
-    width: 150px;  
+    width: 120px;  
 }
 
 .conteiner .inicio table tr .filaLiberTel{
@@ -241,12 +229,35 @@ a:hover{
     width: 25px;  
 }
 
+.conteiner .inicio table .inpnombres{
+    margin: 0 2px;
+    width: 160px;
+    font-size: 14px;
+    
+}
+
+.conteiner .inicio table .email{
+    height: 25px; 
+}
+
+.conteiner .inicio .inpnec{
+    width: 60px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.conteiner .inicio .espacio{
+    height: 6px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
 
 /*TABLA DE SELECCION DE OBRA*/
 
 .conteiner .seleccion table{
     margin: 10px auto;
-    width: 670px;
+    width: 700px;
     height: 192px; 
     caption-side: bottom;  
     border-collapse: collapse;
@@ -299,7 +310,7 @@ a:hover{
 
 .conteiner .sectdocument table {
     margin: 10px auto;
-    width: 670px;
+    width: 700px;
     height: auto;
     caption-side: bottom;  
     border-collapse: collapse;
@@ -310,7 +321,7 @@ a:hover{
     text-align: center;
     font-size: 24px;
     margin-top: 10px;
-    width: 670px;
+    width: 700px;
     height: 50px;
    
 }
@@ -463,14 +474,12 @@ footer a:hover{
     position: absolute;
     display: block;
 	background: #F8F8F8;
-    margin: 50% 50%;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
 	border-radius: 5px;
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
-	margin:10px 250px;
+	margin:55px 250px;
     width: 750px;
-
 	transition: .7s ease all;
 	transform: scale(0.7);
 	opacity: 0;

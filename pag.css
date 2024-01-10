@@ -64,7 +64,7 @@ body{
 .pag{
     position: absolute;
     display: block;
-    margin: 5% 28%;
+    margin: -15px 28%;
     z-index:0;
 }
 
